@@ -42,3 +42,5 @@ coverage/
 
 # CI config
 .github/*.log
+playwright-report/index.html
+test-results/.last-run.json
