@@ -1,10 +1,9 @@
 {
-  "name": "Playwright E2E",
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:20-bullseye",
-  "features": {
-    "ghcr.io/devcontainers/features/playwright:1": {}
+  "name": "playwright-dev",
+  "build": {
+    "dockerfile": "Dockerfile"
   },
-  "postCreateCommand": "npm install && npx playwright install",
+  "postCreateCommand": "npm install && npx playwright install --with-deps",
   "customizations": {
     "vscode": {
       "extensions": [
