@@ -7,7 +7,7 @@ module.exports = defineConfig({
   retries: 1,
   use: {
     baseURL: 'https://automationexercise.com',
-    headless: false,  // <-- Set to false to see browser!
+    headless: true,  // <-- Set to false to see browser!
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
   },

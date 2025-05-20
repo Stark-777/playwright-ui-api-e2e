@@ -1,0 +1,44 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+.pnpm-debug.log*
+
+# Playwright output
+test-results/
+playwright-report/
+trace.zip
+*.zip
+
+# VSCode settings
+.vscode/
+
+# Environment variables
+.env
+.env.*
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Coverage (if added later)
+coverage/
+
+# IDEs
+.idea/
+*.iml
+*.sw?
+
+# MacOS + system
+._*
+.Spotlight-V100
+.Trashes
+
+# CI config
+.github/*.log
