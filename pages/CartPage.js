@@ -4,10 +4,10 @@ exports.CartPage = class CartPage {
   constructor(page) {
     this.page = page;
     this.firstProduct = page.locator('.features_items .product-image-wrapper').first();
-    this.addToCartButton = this.firstProduct.locator('.productinfo .add-to-cart:visible');
-    this.continueShoppingButton = page.locator('button:has-text("Continue Shopping")');
-    this.viewCartLink = page.locator('a[href="/view_cart"]:visible');
-    this.cartItems = page.locator('.cart_info');
+    this.addToCartButton = page.locator('.overlay-content > .btn').first();
+    this.continueShoppingButton = page.getByRole('button', { name: 'Continue Shopping' });
+    this.viewCartLink = page.getByRole('link', { name: ' Cart' });
+    this.cartItems = page.getByRole('link', { name: 'Blue Top' });
     this.productNameInCart = page.locator('.cart_description h4 a');
   }
 
@@ -22,8 +22,8 @@ exports.CartPage = class CartPage {
     await this.viewCartLink.click();
   }
 
-  async assertProductInCart(expectedNamePartial) {
+  async assertProductInCart(expectedName) {
     await expect(this.cartItems).toBeVisible();
-    await expect(this.productNameInCart).toContainText(expectedNamePartial);
+    await expect(this.cartItems).toContainText(expectedName);
   }
 };
