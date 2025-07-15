@@ -7,9 +7,32 @@ module.exports = defineConfig({
   retries: 1,
   use: {
     baseURL: 'https://automationexercise.com',
-    headless: true,  // <-- Set to false to see browser!
+    headless: false,  // <-- Set to false to see browser!
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
+    testIdAttribute: 'data-qa',
   },
   reporter: [['html'], ['list']],
+  projects: [
+    {
+      name: 'Chromium',
+      use: { ...require('@playwright/test').devices['Desktop Chrome'] },
+    },
+    {
+      name: 'Firefox',
+      use: { ...require('@playwright/test').devices['Desktop Firefox'] },
+    },
+    {
+      name: 'WebKit',
+      use: { ...require('@playwright/test').devices['Desktop Safari'] },
+    },
+    {
+      name: 'Mobile Chrome',
+      use: { ...require('@playwright/test').devices['Pixel 5'] },
+    },
+    {
+      name: 'Mobile Safari',
+      use: { ...require('@playwright/test').devices['iPhone 13'] },
+    },
+  ],
 });

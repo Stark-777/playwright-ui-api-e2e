@@ -6,12 +6,12 @@ exports.LoginPage = class LoginPage {
    */
   constructor(page) {
     this.page = page;
-    this.loginLink = this.page.locator('a[href="/login"]');
-    this.emailInput = this.page.locator('input[data-qa="login-email"]');
-    this.passwordInput = this.page.locator('input[data-qa="login-password"]');
-    this.loginButton = this.page.locator('button[data-qa="login-button"]');
-    this.loginError = this.page.locator('p:has-text("incorrect")');
-    this.loggedInMessage = this.page.locator('a:has-text("Logged in as")');
+    this.loginLink = this.page.getByRole('link', { name: ' Signup / Login' });
+    this.emailInput = this.page.getByTestId('login-email');
+    this.passwordInput = this.page.getByRole('textbox', {name: 'password'});
+    this.loginButton = this.page.getByRole('button', { name: 'Login' });
+    this.loginError = this.page.getByText('Your email or password is incorrect!');
+    this.loggedInMessage = this.page.getByText('Logged in as');
   }
 
   async navigate() {

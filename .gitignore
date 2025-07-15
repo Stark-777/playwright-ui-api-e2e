@@ -44,3 +44,6 @@ coverage/
 .github/*.log
 playwright-report/index.html
 test-results/.last-run.json
+playwright-report/*
+test-results/*.json
+test-results/*.xml
