@@ -6,7 +6,7 @@ exports.CartPage = class CartPage {
     this.firstProduct = page.locator('.features_items .product-image-wrapper').first();
     this.addToCartButton = page.locator('.overlay-content > .btn').first();
     this.continueShoppingButton = page.getByRole('button', { name: 'Continue Shopping' });
-    this.viewCartLink = page.getByRole('link', { name: ' Cart' });
+    this.viewCartLink = page.getByRole('link', { name: 'Cart' });
     this.cartItems = page.getByRole('link', { name: 'Blue Top' });
     this.productNameInCart = page.locator('.cart_description h4 a');
   }
