@@ -3,10 +3,10 @@ const { expect } = require('@playwright/test');
 exports.RegisterPage = class RegisterPage {
   constructor(page) {
     this.page = page;
-    this.signupLoginLink = page.locator('a[href="/login"]');
-    this.nameInput = page.locator('input[data-qa="signup-name"]');
-    this.emailInput = page.locator('input[data-qa="signup-email"]');
-    this.signupButton = page.locator('button[data-qa="signup-button"]');
+    this.signupLoginLink = page.getByRole('link', { name: 'Signup / Login' });
+    this.nameInput = this.page.getByTestId('signup-name');
+    this.emailInput = this.page.getByTestId('signup-email');
+    this.signupButton = page.getByTestId('signup-button');
 
     this.genderMr = page.locator('#id_gender1');
     this.passwordInput = page.locator('#password');
